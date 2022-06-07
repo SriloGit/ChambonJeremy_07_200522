@@ -1,0 +1,19 @@
+{
+  "name": "chambonjeremy_07_200522",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch style/sass/main.scss:style/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SriloGit/ChambonJeremy_07_200522.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SriloGit/ChambonJeremy_07_200522/issues"
+  },
+  "homepage": "https://github.com/SriloGit/ChambonJeremy_07_200522#readme"
+}
