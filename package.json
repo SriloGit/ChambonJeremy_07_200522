@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SriloGit/ChambonJeremy_07_200522/issues"
   },
-  "homepage": "https://github.com/SriloGit/ChambonJeremy_07_200522#readme"
+  "homepage": "https://github.com/SriloGit/ChambonJeremy_07_200522#readme",
+  "devDependencies": {
+    "eslint": "^8.17.0"
+  }
 }
