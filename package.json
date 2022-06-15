@@ -18,5 +18,8 @@
   "homepage": "https://github.com/SriloGit/ChambonJeremy_07_200522#readme",
   "devDependencies": {
     "eslint": "^8.17.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
   }
 }

@@ -2,7 +2,9 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="style/sass/main.css" rel="stylesheet" type="text/css" />
+  <link href="style/css/normalize.css" rel="stylesheet" type="text/css" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="title" content="Les petits plats, recettes de cuisine" />
@@ -10,50 +12,100 @@
 </head>
 
 <body>
+  
+  <div class="container-fluid">
   <!-- ==============================      HEADER     ==============================-->
-  <header class="logo">
-    <img src="assets/images/logo.png" alt="logo Les petits plats" />
-  </header>
-  <!-- =========================      SEARCH BAR     =========================-->
-  <main id="main">
-    <section id="search" data-error="Aucune recette ne correspond à votre critère... Vous pouvez
-    chercher « tarte aux pommes », « poisson », etc.">
-      <input id="search-bar" type="text" name="search" placeholder="Rechercher une recette" minlength="3">
-    </section>
-    <section id="tags"></section>
-
-        <!-- ================================== FILTER ==================================-->
-        <section id="sort-menu-section">
-
-          <div id="sort-menu-ingredients" class="sort-menu">
-            <label id="ingredients-label" for="ingredients-search">Ingrédients<img class="open-ingredients open"/></label>    
-            <input id="ingredients-search" type="text" placeholder="Rechercher un ingrédient...">
-    
-            <ul id="ingredients-list"></ul>
+    <header class="logo">
+      <div class="text-center mt-4 mb-2">
+        <img class="img-fluid mx-auto" src="assets/images/logo.png" alt="Logo" />
+      </div>
+    </header>
+    <!-- =========================      SEARCH BAR     =========================-->
+        <main id="main">
+          <div class="container-xl p-0">
+          <div class="row">
+            <form class="searchBar">
+              <label for="searchBar"> </label>
+              <div class="col-12 col-sm-12">
+                <input
+                  type="search"
+                  class="p-3"
+                  id="searchBar"
+                  value="Rechercher une recette"
+                />
+                <i class="fi fi-br-search"></i>
+              </div>
+            </form>
           </div>
-    
-          <div id="sort-menu-device" class="sort-menu">
-            <label id="device-label" for="device-search">Appareils<img class="open-devices open"/></label>
-            <input id="device-search" type="text" placeholder="Rechercher un appareil...">
-    
-            <ul id="devices-list"></ul>
+  
+          <!-- Selected tags-->
+          <div class="row">
+            <div class="col-12 col-sm-12">
+              <div></div>
+            </div>
           </div>
-    
-          <div id="sort-menu-ustensils" class="sort-menu">
-            <label id="ustensils-label" for="ustensils-search">Ustensiles<img class="open-ustensils open"/></label>
-           <input id="ustensils-search" type="text" placeholder="Rechercher un ustensile...">
-    
-            <ul id="ustensils-list"></ul>
+          <!-- Tags List-->
+          <div class="row">
+            <!-- Ingredients -->
+            <div class="col-sm-4 col-lg-2">
+              <form class="ingredients">
+                <label for="ingredients"> </label>
+                <input
+                  type="text"
+                  id="ingredients"
+                  class="background-primary p-3"
+                  value="Ingrédients"
+                />
+                <i class="fi fi-bs-angle-down"></i>
+              </form>
+            </div>
+  
+            <!-- Devices -->
+            <div class="col-sm-4 col-lg-2">
+              <form class="appareils">
+                <label for="appareils"> </label>
+                <input
+                  type="text"
+                  id="appareils"
+                  class="background-secondary p-3"
+                  value="Appareils"
+                />
+                <i class="fi fi-bs-angle-down"></i>
+              </form>
+            </div>
+  
+            <!-- Ustensils -->
+            <div class="col-sm-4 col-lg-2">
+              <form class="ustensils">
+                <label for="ustensils"> </label>
+                <input
+                  type="text"
+                  id="ustensils"
+                  class="background-tertiary p-3"
+                  value="Ustensiles"
+                />
+                <i class="fi fi-bs-angle-down"></i>
+              </form>
+            </div>
           </div>
-        </section>
-    
-        <!-- ========== RECIPE GALLERY ==========-->
-        <section id="gallery"></section>
-      </main>
+        </div>
+          <!-- ========== RECIPE GALLERY ==========-->
+          <div class="recipes">
+            <div class="container-xl pt-5 pe-0 ps-0">
+              <div id="recipes" class="row g-4"></div>
+            </div>
+          </div>
+        </main>
+      </div>
     
       <!-- ======================================== SCRIPTS  ========================================-->
-      <script src="js/recipes.js"></script>
-      <script src="js/index.js"></script>
-      <script src="js/search.js"></script>
+      <script src="data/recipes.js"></script>
+      <script src="js/modele/GetRecipes.js"></script>
+      <script src="js/templates/RecipeCard.js"></script>
+      <script src="js/main.js"></script>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
     </html>

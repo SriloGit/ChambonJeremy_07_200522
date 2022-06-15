@@ -1,0 +1,31 @@
+.row{
+    justify-content: space-around;
+}
+
+#search[data-error]::after {
+    content: attr(data-error);
+    position: absolute;
+    top: 80px;
+    left: 25px;
+    font-size: 1em;
+    color: #867072;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    text-align: left;
+    line-height: 0.9;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 10;
+    @media screen and (max-width: 540px){top:70px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;  
+      overflow: hidden;}
+  
+  
+  }
+  
+  #search[data-error-visible="true"]::after {
+    opacity: 1;
+  }
