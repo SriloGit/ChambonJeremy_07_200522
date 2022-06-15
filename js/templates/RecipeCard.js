@@ -1,4 +1,4 @@
-/** Classe pour créer une carte dans la page d'accueil
+/** Class to create recipes card
  * @constructor
  * @param {object} recipe - une recette
  */
@@ -11,22 +11,20 @@ class RecipeCard {
     this._description = recipe.description;
   }
 
-  /**  Méthode pour créer une carte de photographe*/
+  /**  Create a recipe Card */
   createRecipeCard() {
     const $wrapper = document.createElement("div");
     $wrapper.setAttribute("class", "col-sm-6 col-lg-4 ");
 
     const recipeCard = `
               <article class="container p-0 recipe overflow">
-                  <!-- Image -->
+                  <!-- Recipe img -->
                   <div class="row">
                     <div class="gris"></div>
                   </div>
-                  <!-- Contenu de la recette -->
                   <div class="row">
                     <div class="recipe__content">
                       <div class="container p-4">
-                        <!-- Titre et temps -->
                         <div class="row">
                           <div class="col-6 col-sm-7 ps-2 pe-0">
                             <h1>${this._name}</h1>
@@ -38,14 +36,12 @@ class RecipeCard {
                             <h2 class="d-inline ms-2">${this._time} min</h2>
                           </div>
                         </div>
-                        <!-- Ingrédients -->
                         <div class="row mt-2 pt-2">
                           <div class="col-lg-6 p-0 pe-2">
                             <ul class="ps-2">
                               ${this._ingredients}
                             </ul>
                           </div>
-                          <!-- Etapes à suivre -->
                           <div class=" col-lg-6 p-0 ">
                             <p class="recipe__description">
                               ${this._description}

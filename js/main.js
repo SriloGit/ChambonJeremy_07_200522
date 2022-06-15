@@ -1,12 +1,12 @@
 import { recipes } from "../data/recipes.js";
 
-/**Fonction pour créer le tableaux des photographes
- * @param {Array} recipes - Toutes les recettes
+/**Create recipes array
+ * @param {Array} recipes - All the recipes
  */
 function displayData(recipes) {
   const recipesSection = document.querySelector("#recipes");
 
-  //Utilisation du constructor pattern pour récupérer les différents items
+  //Constructor pattern to create the recipes array
   recipes.forEach((recipe) => {
     const getRecipe = new GetRecipes(recipe);
     const Template = new RecipeCard(getRecipe);
@@ -14,9 +14,8 @@ function displayData(recipes) {
   });
 }
 
-/** FONCTION D INITIATION DE LA PAGE D ACCUEIL */
+/** Index init */
 async function init() {
-  // Création du tableau des recettes
   displayData(recipes);
 }
 

@@ -1,6 +1,6 @@
-/**Constructor Pattern - Pour les recettes
+/**Constructor Pattern - Create recipe
  * @constructor
- * @param {object} recipe - Une recette
+ * @param {object} recipe - Recipe
  */
 class GetRecipes {
   constructor(recipe) {
@@ -27,11 +27,8 @@ class GetRecipes {
     let ingredients = [];
     let i = 0;
     do {
-      // Si Un ingrédient existe
       if (this._ingredients[i].ingredient) {
-        // Si une quantité existe
         if (this._ingredients[i].quantity) {
-          // Si une unité existe
           if (this._ingredients[i].unit) {
             ingredients.push(`<li>
             <p class="recipe__ingredient d-inline">
@@ -58,7 +55,7 @@ class GetRecipes {
           i++;
         }
       }
-    } while (i < this._ingredients.length); // Tant que la liste d'ingrédients n'est pas completement ajoutée
+    } while (i < this._ingredients.length); // While all the ingredients aren't all added
     return ingredients.join(" ");
   }
 
@@ -73,7 +70,6 @@ class GetRecipes {
       return this._description;
     } else {
       const description = this._description.match(regexSupWords);
-      console.log(description[0]);
       return description[0].concat("...");
     }
   }
