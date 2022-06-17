@@ -1,22 +1,32 @@
 import { recipes } from "../data/recipes.js";
+import { crossOpen, crossClose } from "./utility/utils.js";
+import { searchBar } from "./modules/searchbar.js";
+import { gallery } from "./modules/gallery.js";
+import { openList, closeList } from "./utility/openclosetagslist.js";
 
-/**Create recipes array
- * @param {Array} recipes - All the recipes
- */
-function displayData(recipes) {
-  const recipesSection = document.querySelector("#recipes");
-
-  //Constructor pattern to create the recipes array
-  recipes.forEach((recipe) => {
-    const getRecipe = new GetRecipes(recipe);
-    const Template = new RecipeCard(getRecipe);
-    recipesSection.appendChild(Template.createRecipeCard());
-  });
-}
-
-/** Index init */
+/** Init index */
 async function init() {
-  displayData(recipes);
+  const tagsBtn = document.querySelectorAll(".tags__button");
+
+  // Init gallery
+  gallery(recipes);
+
+  // Open and close tags list
+  tagsBtn.forEach((button) =>
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      button.innerHTML = "";
+      if (button.getAttribute("class") != "tags__button open") {
+        crossOpen(button);
+        openList(button);
+      } else {
+        crossClose(button);
+        closeList(button);
+      }
+    })
+  );
+
+  searchBar(recipes);
 }
 
 init();
