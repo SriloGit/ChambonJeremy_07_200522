@@ -1,7 +1,11 @@
 import { TagInput } from "../class/taginput.js";
 import { showTagsInput } from "./showtagsinput.js";
 import { closeList } from "./openclosetagslist.js";
-import { crossClose } from "./utils.js";
+import { crossClose,
+  updateTagsListIngredient,
+  updateTagsListUstensil,
+  updateTagsListAppliance,
+ } from "./utils.js";
 import { gallery } from "../modules/gallery.js";
 import { htmlAdd } from "./htmlAdd.js";
 import {
@@ -51,15 +55,19 @@ export function searchTagsInput(recipes) {
               htmlAdd.ingredient.errorMessageInput
             );
 
-            ingredientList(recipes);
-          } else {
-            // Close the list and display all recipe
-            gallery(recipes);
-            closeList(ingredientBtn);
-            ingredientBtn.innerHTML = "";
-            crossClose(ingredientBtn);
-            searchTagsInput(recipes);
-          }
+                ingredientList(recipes);
+                // Prevent the tag to be added again
+                updateTagsListIngredient(htmlAdd.ingredient.listItemOpen);
+              } else {
+                // Close the list and display all recipe
+                gallery(recipes);
+                closeList(ingredientBtn);
+                ingredientBtn.innerHTML = "";
+                crossClose(ingredientBtn);
+                searchTagsInput(recipes);
+                // Prevent the tag to be added again
+                updateTagsListIngredient(htmlAdd.ingredient.listItemOpen);
+              }          
 
           break;
         case "appliances":
@@ -74,12 +82,14 @@ export function searchTagsInput(recipes) {
               htmlAdd.appliance.errorMessageInput
             );
             applianceList(recipes);
+            updateTagsListAppliance(htmlAdd.ingredient.listItemOpen);
           } else {
             gallery(recipes);
             closeList(applianceBtn);
             applianceBtn.innerHTML = "";
             crossClose(applianceBtn);
             searchTagsInput(recipes);
+            updateTagsListAppliance(htmlAdd.ingredient.listItemOpen);
           }
 
           break;
@@ -95,12 +105,14 @@ export function searchTagsInput(recipes) {
               htmlAdd.ustensil.errorMessageInput
             );
             ustensilsList(recipes);
+            updateTagsListUstensil(htmlAdd.ingredient.listItemOpen);
           } else {
             gallery(recipes);
             closeList(ustensilBtn);
             ustensilBtn.innerHTML = "";
             crossClose(ustensilBtn);
             searchTagsInput(recipes);
+            updateTagsListUstensil(htmlAdd.ingredient.listItemOpen);
           }
 
           break;

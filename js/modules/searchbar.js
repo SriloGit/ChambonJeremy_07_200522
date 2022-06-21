@@ -1,6 +1,7 @@
 import { Research } from "../Class/Research.js";
 import { gallery, displayData, clearGallery } from "./gallery.js";
 import { errorMessage } from "../utility/utils.js";
+import { clearTagsOpen } from "../utility/tagsutils.js";
 
 /** Init the search
  * @param {Array} recipes - Recipes
@@ -38,7 +39,7 @@ export function searchBar(recipes) {
     event.preventDefault();
 
     const research = researchInput.value;
-
+    clearTagsOpen();
     if (research.length >= 3) {
       const recipesResearch = new Research(recipes, research);
       const newRecipes = recipesResearch.researchSort();
