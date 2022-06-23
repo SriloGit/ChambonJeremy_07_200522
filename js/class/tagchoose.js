@@ -14,6 +14,8 @@ export class TagChoose {
    */
   tagChoosen() {
     let recipesArray = this._recipes.filter((recipe) => {
+
+      // Get the ingredient in lower case
       let ingredientArray = recipe.ingredients.map((item) =>
         item.ingredient.toLowerCase()
       );

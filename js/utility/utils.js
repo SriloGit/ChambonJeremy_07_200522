@@ -141,7 +141,11 @@
           match++;
         }
         if(match === input.length){
+<<<<<<< HEAD
            return true;
+=======
+          return true;
+>>>>>>> 52e5909 (Typo recipe + Add not same tags)
         }
       }
       return false;
