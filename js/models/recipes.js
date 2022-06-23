@@ -59,6 +59,7 @@
       return ingredients.join(" ");
     }
   
+    //Add ellipsis if too much words in description
     get description() {
       const regexInfWords = new RegExp("^\\s*\\S+(?:\\s+\\S+){0,40}\\s*$");
   

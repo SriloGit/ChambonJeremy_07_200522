@@ -28,3 +28,10 @@ export function clearTagsLists() {
   document.getElementById("ustensils__form").lastChild.remove();
   document.getElementById("appliance__form").lastChild.remove();
 }
+/** Clear opened tags */
+export function clearTagsOpen() {
+  let tagsOpen = document.querySelectorAll(".tag__item");
+  tagsOpen.forEach((tag) => {
+    tag.remove();
+  })
+}

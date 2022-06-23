@@ -15,7 +15,7 @@ import { searchTagsInput } from "../utility/searchtagsinput.js";
  */
 export function displayData(recipes) {
   const recipesSection = document.querySelector("#recipes");
-  // Constructor patten to get all the recipes
+  // Constructor pattern to get all the recipes
   if (recipes.length >= 1) {
     recipes.forEach((recipe) => {
       const getRecipe = new getRecipes(recipe);
@@ -24,9 +24,7 @@ export function displayData(recipes) {
     });
   } else {
     clearGallery();
-    errorMessage(
-      `Aucune recette ne correspond à votre critère... Vous pouvez chercher "tarte aux pommes", "poisson", etc...`
-    );
+    errorMessage(`Aucune recette ne correspond à votre critère... Vous pouvez chercher "tarte aux pommes", "poisson", etc...`);
   }
 }
 
@@ -37,7 +35,7 @@ export function clearGallery() {
 }
 
 /**Create the gallery
- * @param {array} recipes - Deplayed data
+ * @param {array} recipes - Displayed data
  */
 export function gallery(recipes) {
   clearGallery();

@@ -1,4 +1,5 @@
 /**Gallery creation by the research*/
+//import { includes,isInputInRecipes2,isInputInRecipes } from "../utility/utils.js";
 export class Research {
     /** Search creation
      * @param {Array} recipes - Recipes
@@ -19,7 +20,7 @@ export class Research {
       for (let i = 0; i < this._recipes.length; i++) {
         if (
           // check if the research value is the recipe existing in the database
-          this._recipes[i].name.toLowerCase().includes(this._research)
+          this._recipes[i].name.includes(this._research)|| this._recipes[i].description.includes(this._research)
         ) {
           // add the recipe in the new array
           recipesArray[recipesIndex] = this._recipes[i];
@@ -28,9 +29,7 @@ export class Research {
           // check if the research value is an ingredients existing in the database
           for (let y = 0; y < this._recipes[i].ingredients.length; y++) {
             if (
-              this._recipes[i].ingredients[y].ingredient
-                .toLowerCase()
-                .includes(this._research)
+              this._recipes[i].ingredients[y].ingredient.includes(this._research)
             ) {
               // add the recipe in the new array
               recipesArray[recipesIndex] = this._recipes[i];
