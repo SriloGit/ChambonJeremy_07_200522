@@ -149,7 +149,7 @@
   }
 /** Function to search the name of a recipe in array
    * @param {string} input - Input of user
-   * @param {string} recipes - Recipe name
+   * @param {string} recipe - Recipe name
    * @return {boolean} result - Input exist in array
    */
   export function includes(input, recipe){
@@ -162,9 +162,13 @@
             match ++; // on compte le nombre de caractère qui coincident
           }
         }
-        if (match === input.length) return true; // si la somme des coincidences correspond à la somme taille de la chaine saisie, alors on a trouvé une occurence
+        if (match === input.length) {
+          console.log(input);
+          console.log(recipe);
+          return true;
+        } // si la somme des coincidences correspond à la somme taille de la chaine saisie, alors on a trouvé une occurence
       }
+      match = 0;
     }
-    
     return false; // Si l'excécution du code arrive ici, cela signifie qu'il n'y a pas d'occurence.
   }

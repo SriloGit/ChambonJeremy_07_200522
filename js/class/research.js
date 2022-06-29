@@ -16,7 +16,7 @@ export class Research {
      */
     researchSort() {
       let recipesArray = [];
-      let recipesIndex = 0;
+      //let recipesIndex = 0;
   
       for (let i = 0; i < this._recipes.length; i++) {
         if (
@@ -24,8 +24,8 @@ export class Research {
           includes(this._research,this._recipes[i].name) || includes(this._research,this._recipes[i].description)
         ) {
           // add the recipe in the new array
-          recipesArray[recipesIndex] = this._recipes[i];
-          recipesIndex++;
+          recipesArray.push(this._recipes[i]);
+          //recipesIndex++;
         } else {
           // check if the research value is an ingredients existing in the database
           for (let y = 0; y < this._recipes[i].ingredients.length; y++) {
@@ -33,13 +33,12 @@ export class Research {
               includes(this._research,this._recipes[i].ingredients[y].ingredient)
             ) {
               // add the recipe in the new array
-              recipesArray[recipesIndex] = this._recipes[i];
-              recipesIndex++;
+              recipesArray.push(this._recipes[i]);
+              //recipesIndex++;
             }
           }
         }
       }
-  
       return recipesArray;
     }
   }

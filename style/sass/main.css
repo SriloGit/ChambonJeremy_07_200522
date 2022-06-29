@@ -101,7 +101,7 @@
   .searchBar button {
     position: absolute;
     top: 55%;
-    right: 5%;
+    right: 2%;
   }
   /* Tags sélectionnés */
   #tags {
