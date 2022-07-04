@@ -113,40 +113,6 @@
       }
     }
   }
-  /** Function to search the name of a recipe in array
-   * @param {string} recipes - Recipe name
-   * @param {string} input - Input of user
-   * @return {boolean} result - Input exist in array
-   */
-  export function isInputInRecipes(recipes, input){
-    let result = false;
-    for (let i =0; i < recipes.length; i++){
-      for (let y=0; y < input.length; y++){
-        if(input[y] !== recipes[i+y]){
-          result = false
-          break;
-        }else{
-          result = true
-        }
-      }
-    }
-    return result;
-  }
-
-  export function isInputInRecipes2(recipes, input){
-    let match = 0;
-    for (let i =0; i < recipes.length; i++){
-      for (let y=0; y < input.length; y++){
-        if(input[y] !== recipes[i+y]){
-          match++;
-        }
-        if(match === input.length){
-          return true;
-        }
-      }
-      return false;
-    }
-  }
 /** Function to search the name of a recipe in array
    * @param {string} input - Input of user
    * @param {string} recipe - Recipe name
@@ -155,20 +121,18 @@
   export function includes(input, recipe){
     let match = 0;
     
-    for(let j=0; j<recipe.length; j++) { //on parcours chaque élément de la longue chaine de caract dans laquelle on fouille
-      if(recipe[j] === input[0]) { // Lorsqu'on tombe sur un caractère qui correspond au premier caractère de la chaine saisie,
-        for(let k=0; k<input.length; k++) { // on parcours simultanément la chaine saisie a partir du début et la chaine de base à partir de la position où on a trouvé un caractère commun au premier,
+    for(let j=0; j<recipe.length; j++) {
+      if(recipe[j] === input[0]) {
+        for(let k=0; k<input.length; k++) {
           if(input[k] === recipe[k+j]) {
-            match ++; // on compte le nombre de caractère qui coincident
+            match ++; 
           }
         }
         if (match === input.length) {
-          console.log(input);
-          console.log(recipe);
           return true;
-        } // si la somme des coincidences correspond à la somme taille de la chaine saisie, alors on a trouvé une occurence
+        }
       }
       match = 0;
     }
-    return false; // Si l'excécution du code arrive ici, cela signifie qu'il n'y a pas d'occurence.
+    return false;
   }
