@@ -7,7 +7,7 @@ import { crossClose,
   updateTagsListAppliance,
  } from "./utils.js";
 import { gallery } from "../modules/gallery.js";
-import { htmlAdd } from "./htmlAdd.js";
+import { htmlAdd } from "./htmladd.js";
 import {
   ingredientList,
   applianceList,
