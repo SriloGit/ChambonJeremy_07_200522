@@ -1,4 +1,4 @@
-import { TagChoose } from "../Class/tagchoose.js";
+import { TagChoose } from "../class/tagchoose.js";
 import { Tags } from "../models/tags.js";
 import { ListTag } from "../templates/listtag.js";
 

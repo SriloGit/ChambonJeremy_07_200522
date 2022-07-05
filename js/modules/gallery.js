@@ -1,5 +1,5 @@
 import { getRecipes } from "../models/recipes.js";
-import { RecipeCard } from "../templates/recipecard.js";
+import { RecipeCard } from "../templates/RecipeCard.js";
 import { errorMessage } from "../utility/utils.js";
 import { tagsUtils, clearTagsLists } from "../utility/tagsutils.js";
 import {
