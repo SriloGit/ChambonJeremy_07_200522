@@ -1,4 +1,4 @@
-import { Research } from "../Class/Research.js";
+import { Research } from "../class/research.js";
 import { gallery, displayData, clearGallery } from "./gallery.js";
 import { errorMessage } from "../utility/utils.js";
 import { clearTagsOpen } from "../utility/tagsutils.js";
